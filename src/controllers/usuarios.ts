@@ -4,8 +4,6 @@ import { IRequest } from "../helper/const";
 import { Connection } from "../db/connection";
 import { Common } from "../helper/common";
 import UsuarioModel, { IUsuario } from "../models/usuarios";
-import * as bcrypt from 'bcryptjs';
-import ldap from "ldapjs";
 import * as dotenv from "dotenv";
 import { AuthUtils } from "../helper/AuthUtils";
 dotenv.config({ path: `./environments/.${process.env.ENV || 'local'}.env` });
