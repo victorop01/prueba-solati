@@ -11,6 +11,9 @@ const controller = new Controller();
 router.get('/', [authM.auth],
   (req: Request, res: Response, next: NextFunction) => controller.getAll(req as IRequest, res, next))
 
+router.get('/:id', [authM.auth],
+  (req: Request, res: Response, next: NextFunction) => controller.get(req as IRequest, res, next))
+
 router.post('/create_task', [authM.auth],
   (req: Request, res: Response, next: NextFunction) => controller.createTask(req as IRequest, res, next))
 
