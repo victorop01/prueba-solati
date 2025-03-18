@@ -8,13 +8,13 @@ const authM = new AuthMiddleware();
 const router = Router();
 const controller = new Controller();
 
-router.get('/', [],
+router.get('/', [authM.auth],
   (req: Request, res: Response, next: NextFunction) => controller.getAll(req as IRequest, res, next))
 
-router.post('/create_task', [],
+router.post('/create_task', [authM.auth],
   (req: Request, res: Response, next: NextFunction) => controller.createTask(req as IRequest, res, next))
 
-router.put('/update_task', [],
+router.put('/update_task/:id', [authM.auth],
   (req: Request, res: Response, next: NextFunction) => controller.updateTask(req as IRequest, res, next))
 
 

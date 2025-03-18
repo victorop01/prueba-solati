@@ -8,7 +8,7 @@ const authM = new AuthMiddleware();
 const router = Router();
 const controller = new Controller();
 
-router.get('/', [],
+router.get('/', [authM.auth],
   (req: Request, res: Response, next: NextFunction) => controller.getAll(req as IRequest, res, next))
 
 router.post('/login_user', [],
